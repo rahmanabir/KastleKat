@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿//Script created by Abir Rahman, SpaceKnight Studios 
+//This script creates a flight path towards a given target. All calculations regarding this are done here. You might want to brush up on your physics. 
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
