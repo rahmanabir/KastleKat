@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="play_store_hero_desktop" size="8.500000 11.755660" />
+    <ImageTarget name="crazykey" size="0.140000 0.216619" />
+    <ImageTarget name="fire" size="0.135000 0.204030" />
+    <ImageTarget name="elean" size="0.135000 0.181441" />
+    <ImageTarget name="kath" size="0.140000 0.214404" />
+    <ImageTarget name="card10club" size="0.060000 0.091778" />
+    <ImageTarget name="illgiveyouthesun" size="0.140000 0.211783" />
+  </Tracking>
+</QCARConfig>

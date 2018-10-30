@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/CastleHealthTestScence.unity
+- path: Assets/Scenes/Test_AR.unity
   isLoaded: 1
   isActive: 1
