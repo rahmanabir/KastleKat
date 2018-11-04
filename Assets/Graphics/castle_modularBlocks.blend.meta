@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 26e8ad5b1cf69c34181c039de0ff2776
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bush
+    100002: Castle_Gate
+    100004: //RootNode
+    100006: Castle_Roof
+    100008: Cube
+    100010: Cube_004
+    100012: Cube_005
+    100014: Cube_006
+    100016: Cube_010
+    100018: Cylinder_001
+    100020: Cylinder_004
+    100022: Rock
+    100024: Small_Stone
+    100026: Stone
+    100028: Tower_Garrison
+    100030: Tower_Hat
+    100032: Tower_Pillar
+    100034: Tower_Window
+    100036: Wall
+    100038: Wall_Railing
+    100040: Wall_Window
+    400000: Bush
+    400002: Castle_Gate
+    400004: //RootNode
+    400006: Castle_Roof
+    400008: Cube
+    400010: Cube_004
+    400012: Cube_005
+    400014: Cube_006
+    400016: Cube_010
+    400018: Cylinder_001
+    400020: Cylinder_004
+    400022: Rock
+    400024: Small_Stone
+    400026: Stone
+    400028: Tower_Garrison
+    400030: Tower_Hat
+    400032: Tower_Pillar
+    400034: Tower_Window
+    400036: Wall
+    400038: Wall_Railing
+    400040: Wall_Window
+    2100000: Wood
+    2100002: Stone
+    2100004: Brick
+    2100006: Stone_001
+    2100008: Steel
+    2100010: Greenery
+    2100012: Cloth
+    2300000: Bush
+    2300002: Castle_Gate
+    2300004: Castle_Roof
+    2300006: Cube
+    2300008: Cube_004
+    2300010: Cube_005
+    2300012: Cube_006
+    2300014: Cube_010
+    2300016: Cylinder_001
+    2300018: Cylinder_004
+    2300020: Rock
+    2300022: Small_Stone
+    2300024: Stone
+    2300026: Tower_Garrison
+    2300028: Tower_Hat
+    2300030: Tower_Pillar
+    2300032: Tower_Window
+    2300034: Wall
+    2300036: Wall_Railing
+    2300038: Wall_Window
+    3300000: Bush
+    3300002: Castle_Gate
+    3300004: Castle_Roof
+    3300006: Cube
+    3300008: Cube_004
+    3300010: Cube_005
+    3300012: Cube_006
+    3300014: Cube_010
+    3300016: Cylinder_001
+    3300018: Cylinder_004
+    3300020: Rock
+    3300022: Small_Stone
+    3300024: Stone
+    3300026: Tower_Garrison
+    3300028: Tower_Hat
+    3300030: Tower_Pillar
+    3300032: Tower_Window
+    3300034: Wall
+    3300036: Wall_Railing
+    3300038: Wall_Window
+    4300000: Rock
+    4300002: Stone
+    4300004: Small_Stone
+    4300006: Tower_Hat
+    4300008: Tower_Window
+    4300010: Wall_Window
+    4300012: Castle_Roof
+    4300014: Wall_Railing
+    4300016: Wall
+    4300018: Tower_Pillar
+    4300020: Tower_Garrison
+    4300022: Castle_Gate
+    4300024: Bush
+    4300026: Cylinder_004
+    4300028: Cube_004
+    4300030: Cylinder_001
+    4300032: Cube_010
+    4300034: Cube
+    4300036: Cube_006
+    4300038: Cube_005
+    7400000: Default Take
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
