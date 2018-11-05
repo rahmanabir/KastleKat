@@ -34,7 +34,7 @@ public class projectileShooter : MonoBehaviour {
         if (!isShooting) {
             isShooting = true;
             Rigidbody rock = Instantiate(rockProjectile, transform.position, transform.rotation);
-            rock.velocity = transform.TransformDirection(Vector3.forward * 30);
+            rock.velocity = transform.TransformDirection(Vector3.forward * 60);
             Invoke("NotShooting", 1f);
         }
     }
