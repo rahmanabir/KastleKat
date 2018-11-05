@@ -35,9 +35,10 @@ public class gameScoreTalier : MonoBehaviour {
 		// else{
 		// 	castleHealth = 0;
 		// }
-		if(castleBlockcount == 0){
-			castleHealth = 0;
-		}
+		// if(castleBlockcount == 0){
+		// 	castleHealth = 0;
+		// 	print("Castle-Health: "+castleHealth);
+		// }
 		
 		print("Castle-Health: "+castleHealth);
 		

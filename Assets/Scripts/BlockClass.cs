@@ -52,18 +52,20 @@ public class BlockClass : MonoBehaviour {
 		
 		if(health > stoneHealth){
 			scoreTalier.GetComponent<gameScoreTalier>().updateCastleHealth(-1f*stoneHealth);
+			stoneHealth = 0;
 		}
 		else{
 			scoreTalier.GetComponent<gameScoreTalier>().updateCastleHealth(-1f*health);
+			stoneHealth -=  health;
 		}
 
-		if (health > stoneHealth){
-			stoneHealth = 0;
-		}
-		else
-		{
-		stoneHealth -=  health;
-		}
+		// if (health > stoneHealth){
+		// 	stoneHealth = 0;
+		// }
+		// else
+		// {
+		// stoneHealth -=  health;
+		// }
 	}
 
 

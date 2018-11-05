@@ -16,7 +16,7 @@ public class StoneBlockClass : BlockClass {
 		stoneMaxHeatlth = 100f;
 		displacementThreshold = 9f;
 		rb = GetComponent<Rigidbody>();
-		damageConstant = 1.5f;
+		damageConstant = 0.01f; //tune this to control damage upon impact.
 		scoreTalier = GameObject.FindGameObjectsWithTag("tallyTool")[0];
 
 		firstcount = 0;
@@ -44,8 +44,11 @@ public class StoneBlockClass : BlockClass {
 	void OnCollisionEnter(Collision col){
  
      if(col.relativeVelocity.magnitude > 10){ 
-		 
-		float damageAmmount = damageConstant * col.relativeVelocity.magnitude; 
+
+
+		Vector3 collisionForce = col.impulse / Time.fixedDeltaTime;
+		//print(collisionForce); 
+		float damageAmmount = damageConstant * collisionForce.magnitude; //impulse based damage 
 		 //stoneHealth -= damageAmmount; 
 		deductHealth(damageAmmount);
 		
