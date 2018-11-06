@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 114388310507216664}
   - component: {fileID: 54731059587527778}
   m_Layer: 0
-  m_Name: Castle_Prefab
+  m_Name: Castle_Phy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
