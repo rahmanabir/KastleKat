@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Test_CastleHealth.unity
+- path: Assets/Scenes/Test_ARphy.unity
   isLoaded: 1
   isActive: 1

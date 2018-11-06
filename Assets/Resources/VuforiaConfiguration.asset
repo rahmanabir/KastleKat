@@ -8,20 +8,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -2067402452, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
+  m_Script: {fileID: 0}
   m_Name: VuforiaConfiguration
   m_EditorClassIdentifier: 
   vuforia:
-    vuforiaLicenseKey: AfJIkwH/////AAABmc0lxSYqAEV/uiTLZh8ge4obZSmnA0aD6PqFaHskg/2iOALfSovgq+RB59nr83Hhudz9oagrRxRWJaUR+1FQcku7j6diBzDggvsnfH0nXVpcvASdLbvAfzXCI5wU5UWlelbbZ/0BynxkBy2g+LKrff+Z2Rto8iXOvQEEqTUf4gxqJek5B8d0jK7v1e0yV2j3jWGGP9T5L0SOYXtMG9Yer7fm6BmCOSibwpDwQTpLW7kRJU/Zha2H++L3KpwldEioiVchVpWNalMUh0yajJ9xZb4CreS6+BUVIVU342S/CAqCPZUN8RcDeXDPziLI8T+o7EjKxPQVJTRT6XA7P56/SH5PO8gN1QFdCCNwFfhzY4YH
-    ufoLicenseKey: QWZpZWtFei8vLy8vQUFBQUtLb0dBZGQvWEVyam5YSEFmZ1VJVDBKRU9TNVFuZW5tZUxwbTlXMjdUU2N2RGsrV2NpR3JuRkhoaHltbEdCSG1xQi9LeCtCRERDaXBhZ3Y0ZThYcmdLenFFSnl4R0lZYUtvWEF1RklVMllFYkxUWXl2Y1Y3K2MzMGNoSk5tSHRuYUF4dUFndEdOZGp2dFFqRUdiUFRDT3ZNclh4a1FRTk5DZjJQSFo5OFNxeVpoaHR3ZDJSR2hXWmRVdHVHT2NWUnAwSkRsNzdNT1kxWkFPYld4R2F2TXNWYzQ5OEpFL0JtNHZRWkQvNnF1UnJuYnJ2eS9DeXk0WTltY0dsYVQySkhPa2FtS0cyTy9Ha0hkekh5QVF1Tko2UStoRUpUNGl6SitBUTVUNTV2MnI5aGdVejBsY1ROMW1wSmNySkxreEx6d3gzcVBTbU52dmV5UzF3WHFkMTVGSWNJR2pQaEMyMGRGZU1ybHRlOUhoano=
+    vuforiaLicenseKey: 
+    ufoLicenseKey: QWEvSFRNdi8vLy8vQUFBQUtGV2s2Nzh3Y1VBZmg3TE1YZUdyREpSQWV6VjRyMnhtYTRZYkI4ZXFrVHQ2Y0t2ZXMwdnVzUVNESG9TZHlSR1UwaDRjc3RtNjBLV3NIUTRrM1lhdk5TdGZSc2ZGR1U4MmtYR0g0aTJpaDdGc3JKV1htMUJEaUkwbWpCdkd4T2pML0FXOUZSelZKUDBMZk95NExFODFBL0tyemdKSnJqcjkyRUkvZGFNeWYyVU1BUTJPRFM5TE1vYmVudGMrQUpJZHp0NzdKZWdpeUUweThxZVhIWDZocnhuQlVTcVIzOGljcHFTY040cFc5U1JxZmF6MDlyTnlCSVhyb1duaWI0S2xTQmwvOElvU2hFbjYrN2ltbDZOV2hyeGp6QUtWVCtBQTc0R2lQT1lvMk9la2MxNCtML0kyYnVnQlNiSzRXOTFoc1E5d2I1aURSZDNDKzR3YWUzYTZnQzUxTlh4eVBxZFAwTDdaYytEcHYwK0E=
     delayedInitialization: 0
     cameraDeviceModeSetting: -1
-    maxSimultaneousImageTargets: 3
+    maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
-    cameraDirection: 1
+    cameraDirection: 0
     mirrorVideoBackground: 0
-    version: 7.2.23
+    version: 1.0.0
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
@@ -51,8 +51,8 @@ MonoBehaviour:
     matteShader: {fileID: 15310, guid: 0000000000000000f000000000000000, type: 0}
     videoBackgroundEnabled: 1
   deviceTracker:
-    autoInitTracker: 1
-    autoStartTracker: 1
+    autoInitTracker: 0
+    autoStartTracker: 0
     trackingMode: 1
     posePrediction: 0
     modelCorrectionMode: 0
@@ -63,7 +63,7 @@ MonoBehaviour:
     autoInitTracker: 0
     autoStartTracker: 0
   webcam:
-    deviceNameSetInEditor: A4 TECH HD PC Camera
+    deviceNameSetInEditor: 
     flipHorizontally: 0
-    turnOffWebCam: 1
+    turnOffWebCam: 0
     renderTextureLayer: 30

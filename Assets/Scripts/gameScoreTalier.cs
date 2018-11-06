@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class gameScoreTalier : MonoBehaviour {
 	
-	private float castleHealth; 
+	private float castleHealth;
+	private float maxCastleHealth;  
 	private GameObject[] castleBlocks;
 	private int castleBlockcount;
 	private int debugCount;
 	private int orglen; 
+
+	private int firstUpdate;
+
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +21,7 @@ public class gameScoreTalier : MonoBehaviour {
 		orglen = castleBlockcount;
 		debugCount = 0;
 		castleHealth = 0;
+		firstUpdate = 1;
 	}
 	
 	// Update is called once per frame
@@ -35,12 +40,19 @@ public class gameScoreTalier : MonoBehaviour {
 		// else{
 		// 	castleHealth = 0;
 		// }
-		// if(castleBlockcount == 0){
-		// 	castleHealth = 0;
-		// 	print("Castle-Health: "+castleHealth);
-		// }
+		if(castleBlockcount == 0){
+			castleHealth = 0;
+			print("Castle-Health: "+castleHealth);
+		}
 		
-		print("Castle-Health: "+castleHealth);
+		if (firstUpdate == 1){
+
+			maxCastleHealth = castleHealth;
+			firstUpdate = 0;
+		}
+
+		print("Castle-Health: "+100*castleHealth/maxCastleHealth);
+		//print("Max-Castle-Health: "+maxCastleHealth);
 		
 
 	}
