@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db0e1df0f9882bc4480ff6beaf80327b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockProjectile: {fileID: 54433370795845846, guid: 334ee0ae6488c4b41b353988637ff64b,
+  rockProjectile: {fileID: 54645421274617870, guid: e05d3808c128fc8448b155b6b4f8c8d6,
     type: 2}
   castleBlock: {fileID: 54910184352794258, guid: 2ce34f36be2186c4ca3af670a2059911,
     type: 2}
