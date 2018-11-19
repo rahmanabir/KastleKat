@@ -22,8 +22,7 @@ public class StoneBlockClass : BlockClass {
 		rb = GetComponent<Rigidbody>();
 		rb.mass = mass;
 		damageConstant = 0.01f; //tune this to control damage upon impact.
-		scoreTalier = GameObject.FindGameObjectWithTag("tallyTool");
-
+        scoreTalier = GameObject.FindGameObjectWithTag("tallyTool");
 		firstcount = 0;
 
 		// tally.setCastleHealth(stoneHealth);

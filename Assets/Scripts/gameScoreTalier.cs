@@ -29,11 +29,14 @@ public class gameScoreTalier : MonoBehaviour {
 		orglen = castleBlockcount;
 		debugCount = 0;
 		castleHealth = 0;
-		firstUpdate = 1;
+        Invoke("DoneFinding", 2f);
 	}
+    void DoneFinding() {
+		firstUpdate = 1;
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
 		// castleBlocks = GameObject.FindGameObjectsWithTag("catblk");
 		// castleBlockcount = castleBlocks.Length;
@@ -50,18 +53,20 @@ public class gameScoreTalier : MonoBehaviour {
 		// }
 		if(castleBlockcount == 0){
 			castleHealth = 0;
-			print("Castle-Health: "+castleHealth);
+			print("ZERO");
 		}
 		
 		if (firstUpdate == 1){
-
+            print("FirstUpdate MaxHealth Get");
 			maxCastleHealth = castleHealth;
 			firstUpdate = 0;
 		}
 
         castleHealthPercent = 100 * (castleHealth / maxCastleHealth);
 
-        print("Castle-Health: " + castleHealthPercent);
+        print("Maximum: " + maxCastleHealth);
+        print("Current: " + castleHealth);
+        print("Percent: " + castleHealthPercent);
         healthSlider.value = castleHealthPercent;
         //print("Max-Castle-Health: "+maxCastleHealth);
         if (castleHealthPercent <= 100 && castleHealthPercent > 75) {
@@ -82,13 +87,13 @@ public class gameScoreTalier : MonoBehaviour {
             healthSlider.transform.GetChild(5).gameObject.SetActive(true);
             healthSlider.transform.GetChild(6).gameObject.SetActive(false);
         }
-        else if (castleHealthPercent <= 25 && castleHealthPercent > 0) {
+        else if (castleHealthPercent <= 25 && castleHealthPercent > 5) {
             healthSlider.transform.GetChild(3).gameObject.SetActive(false);
             healthSlider.transform.GetChild(4).gameObject.SetActive(false);
             healthSlider.transform.GetChild(5).gameObject.SetActive(false);
             healthSlider.transform.GetChild(6).gameObject.SetActive(true);
         }
-        else GameOver();
+        else if (castleHealthPercent <=5 && castleHealthPercent >= 0) GameOver();
 
 	}
 

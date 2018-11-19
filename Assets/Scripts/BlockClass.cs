@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class BlockClass : MonoBehaviour {
 
-	protected static GameObject scoreTalier;
+    public GameObject breakParticles;
+    protected static GameObject scoreTalier;
 
 	protected float stoneHealth;
 	protected float displacementThreshold;
@@ -20,8 +21,10 @@ public class BlockClass : MonoBehaviour {
 
 	//destroys attached object
 	protected void  DstryFunc(){
+        GameObject brickBoom = Instantiate(breakParticles, transform.position, transform.rotation);
 		Destroy(this.gameObject);
-		scoreTalier.GetComponent<gameScoreTalier>().updateCastleBlockCount(-1);
+
+        scoreTalier.GetComponent<gameScoreTalier>().updateCastleBlockCount(-1);
 		if(stoneHealth > 0){
 			scoreTalier.GetComponent<gameScoreTalier>().updateCastleHealth(-1f*stoneHealth);
 		}
