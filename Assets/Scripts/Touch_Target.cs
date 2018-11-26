@@ -28,7 +28,7 @@ public class Touch_Target : MonoBehaviour {
 						rig.GetComponent<MeshRenderer>().material = hitMaterial;
 						//rig.AddForceAtPosition(ray.direction * 50f ,hitInfo.point, ForceMode.VelocityChange);
 						//print(hitInfo.point);
-						this.GetComponent<RockLauncher>().set_raycast_target(hitInfo.point);
+						this.GetComponent<RockLauncher>().SetRaycastTarget(hitInfo.point);
 					}
 					
 				}

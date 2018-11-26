@@ -19,30 +19,70 @@ public class RockLauncher : MonoBehaviour {
     public float h = 25;    //Max height to be reached by the rock 
     public float gravity = -18; //Gravity value
 
-    public bool debugPath;
+    public bool debugPath, isShooting=false;
+    public Animator cataAnim;
 
 
     private void Start()
     {
         rock.useGravity = false;
-        target = transform.position; 
+        target = transform.position;
+        cataAnim.SetBool("cataReady", true);
     }
 
-    public void set_raycast_target(Vector3 ray_target){
+
+    public void SetRaycastTarget(Vector3 ray_target){
         target = ray_target;
     }
+    void NotShooting() {
+        isShooting = false;
+        cataAnim.SetBool("isShooting", false);
+        cataAnim.SetBool("cataReady", true);
+    }
+    void NotReady() {
+        cataAnim.SetBool("cataReady", false);
+    }
+
 
     private void Update(){
+        for (int i = 0; i < Input.touchCount; ++i) {
+            if (Input.GetTouch(i).phase == TouchPhase.Began) {
+                var ray = Camera.main.ScreenPointToRay(Input.GetTouch(i).position);
 
-        if (Input.GetKeyDown(KeyCode.Space)){
-            Launch(); 
+                RaycastHit hitInfo;
+                if (Physics.Raycast(ray, out hitInfo)) {
+                        var rig = hitInfo.collider.GetComponent<Rigidbody>();
+                        if (rig != null) target = hitInfo.point;
+                        
+                }
+            }
+            if (!isShooting) {
+                isShooting = true;
+                cataAnim.SetBool("isShooting", true);
+                Launch();
+                Invoke("NotShooting", 2.5f);
+                Invoke("NotReady", 1f);
+            }
         }
+        if (Input.GetMouseButtonDown(0)) {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if (debugPath == true)
-        {
-           // DrawPath();
+            RaycastHit hitInfo;
+            if (Physics.Raycast(ray, out hitInfo)) {
+                var rig = hitInfo.collider.GetComponent<Rigidbody>();
+                if (rig != null) target = hitInfo.point;
+
+            }
         }
-    
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            if (!isShooting) {
+                isShooting = true;
+                cataAnim.SetBool("isShooting", true);
+                Launch();
+                Invoke("NotShooting", 2.5f);
+                Invoke("NotReady", 1f);
+            }
+        }    
     }
 
     void Launch(){
@@ -56,8 +96,7 @@ public class RockLauncher : MonoBehaviour {
       
         print(rocky.velocity);
     }
-
-
+    
 
     LaunchData CalculateLaunchData(Rigidbody rock) {
 
