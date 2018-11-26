@@ -9,7 +9,12 @@ using UnityEngine;
 public class RockLauncher : MonoBehaviour {
 
     public Rigidbody rock;
-    public Transform target;
+    //private Transform target;
+    private Vector3 target;
+    //protected Transform raycast_target;
+
+    public float sliderMultiplier = 1.0f;
+
 
     public float h = 25;    //Max height to be reached by the rock 
     public float gravity = -18; //Gravity value
@@ -19,9 +24,13 @@ public class RockLauncher : MonoBehaviour {
 
     private void Start()
     {
-        rock.useGravity = false; 
+        rock.useGravity = false;
+        target = transform.position; 
     }
 
+    public void set_raycast_target(Vector3 ray_target){
+        target = ray_target;
+    }
 
     private void Update(){
 
@@ -31,7 +40,7 @@ public class RockLauncher : MonoBehaviour {
 
         if (debugPath == true)
         {
-            DrawPath();
+           // DrawPath();
         }
     
     }
@@ -39,18 +48,22 @@ public class RockLauncher : MonoBehaviour {
     void Launch(){
 
         Physics.gravity = Vector3.up * gravity;
-        rock.useGravity = true; 
-        rock.velocity = CalculateLaunchData().initailVelocity;
-        //print(CalculateLaunchVelocity());
+        
+        Rigidbody rocky = Instantiate(rock, transform.position, transform.rotation);
+
+        rocky.useGravity = true; 
+        rocky.velocity = CalculateLaunchData(rocky).initailVelocity*sliderMultiplier;
+      
+        print(rocky.velocity);
     }
 
 
 
-    LaunchData CalculateLaunchData() {
+    LaunchData CalculateLaunchData(Rigidbody rock) {
 
                     
-       float displacementY = target.position.y - rock.position.y; //Vertically down displacement : Displacement = Py - h 
-       Vector3 displacementXZ = new Vector3(target.position.x - rock.position.x, 0, target.position.z - rock.position.z);
+       float displacementY = target.y - rock.position.y; //Vertically down displacement : Displacement = Py - h 
+       Vector3 displacementXZ = new Vector3(target.x - rock.position.x, 0, target.z - rock.position.z);
 
         float time = (Mathf.Sqrt(-2 * h / gravity) + Mathf.Sqrt(2 * (displacementY - h) / gravity));
 
@@ -62,22 +75,22 @@ public class RockLauncher : MonoBehaviour {
     }
 
 
-    void DrawPath()
-    {
-        LaunchData launchData = CalculateLaunchData();
-        Vector3 previousDrawPoint = rock.position;
+    // void DrawPath()
+    // {
+    //     LaunchData launchData = CalculateLaunchData();
+    //     Vector3 previousDrawPoint = rock.position;
 
 
-        int resolution = 30; 
-        for (int i = 1; i <= resolution; i++)
-        {
-            float simulationTime = i/(float)resolution * launchData.timeToTarget;
-            Vector3 displacement = (launchData.initailVelocity * simulationTime) + ((Vector3.up *gravity * simulationTime * simulationTime) / 2f); //Third equation of motion, refer to Abirs Notebook Manual
-            Vector3 drawPoint = rock.position + displacement;
-            Debug.DrawLine(previousDrawPoint, drawPoint, Color.green);
-            previousDrawPoint = drawPoint;
-        }
-    }
+    //     int resolution = 30; 
+    //     for (int i = 1; i <= resolution; i++)
+    //     {
+    //         float simulationTime = i/(float)resolution * launchData.timeToTarget;
+    //         Vector3 displacement = (launchData.initailVelocity * simulationTime) + ((Vector3.up *gravity * simulationTime * simulationTime) / 2f); //Third equation of motion, refer to Abirs Notebook Manual
+    //         Vector3 drawPoint = rock.position + displacement;
+    //         Debug.DrawLine(previousDrawPoint, drawPoint, Color.green);
+    //         previousDrawPoint = drawPoint;
+    //     }
+    // }
 
 
     struct LaunchData {
