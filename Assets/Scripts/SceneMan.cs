@@ -10,7 +10,7 @@ public class SceneMan : MonoBehaviour {
         SceneManager.LoadScene("Scene_ARnoBox");
     }
     public void LoadMulti() {
-        SceneManager.LoadScene("Scene_MP");
+        SceneManager.LoadScene("Scene_ARMP");
     }
     public void Quit() {
         Application.Quit();

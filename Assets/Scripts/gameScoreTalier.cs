@@ -21,43 +21,50 @@ public class gameScoreTalier : MonoBehaviour {
     public bool hasWon = false;
     public Transform winCat;
 
+    private int lookBool = 1;
 
-	// Use this for initialization
-	void Start () {
+    void keepLooking() {
+        if (lookBool == 1) {
+            print("looking for blocks!");
+            if (castleHealth != 0) {
+                lookBool = 0;
+                Invoke("DoneFinding", 0.5f);
+            }
+        }
+    }
+
+
+    // Use this for initialization
+    void Start () {
 		castleBlocks = GameObject.FindGameObjectsWithTag("catblk");
 		castleBlockcount = castleBlocks.Length;
 		orglen = castleBlockcount;
 		debugCount = 0;
 		castleHealth = 0;
-        Invoke("DoneFinding", 2f);
-	}
+        //Invoke("DoneFinding", 5f);
+    }
     void DoneFinding() {
 		firstUpdate = 1;
     }
 	
+
+
+
 	// Update is called once per frame
 	void FixedUpdate () {
-		
-		// castleBlocks = GameObject.FindGameObjectsWithTag("catblk");
-		// castleBlockcount = castleBlocks.Length;
 
-		// if(castleBlockcount != 0){
-		// 	if(castleBlockcount > prev_length){
-		// 		orglen = castleBlockcount;
-		// 	}
-		// 	castleHealth = calulateCastleHealth(castleBlocks);
-		// 	prev_length =  castleBlocks.Length;
-		// 	}
-		// else{
-		// 	castleHealth = 0;
-		// }
-		if(castleBlockcount == 0){
+
+        keepLooking();
+
+
+        if (castleBlockcount == 0){
 			castleHealth = 0;
 			print("ZERO");
 		}
 		
 		if (firstUpdate == 1){
             print("FirstUpdate MaxHealth Get");
+            print(castleHealth);
 			maxCastleHealth = castleHealth;
 			firstUpdate = 0;
 		}

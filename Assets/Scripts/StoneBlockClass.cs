@@ -37,6 +37,7 @@ public class StoneBlockClass : BlockClass {
 		
 		if(firstcount == 0){
 			setHealth(maxHealth);
+            print("health set!!!");
 			firstcount = 1;
 		}
 

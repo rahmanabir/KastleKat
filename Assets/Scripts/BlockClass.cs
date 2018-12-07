@@ -21,7 +21,7 @@ public class BlockClass : MonoBehaviour {
 
 	//destroys attached object
 	protected void  DstryFunc(){
-        GameObject brickBoom = Instantiate(breakParticles, transform.position, transform.rotation);
+        Instantiate(breakParticles, transform.position, transform.rotation);
 		Destroy(this.gameObject);
 
         scoreTalier.GetComponent<gameScoreTalier>().updateCastleBlockCount(-1);
