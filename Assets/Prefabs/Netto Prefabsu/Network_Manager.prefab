@@ -20,9 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4461306987339090}
   - component: {fileID: 114669431414565348}
-  - component: {fileID: 114676406405645254}
-  - component: {fileID: 114524651327879598}
-  - component: {fileID: 114522006421254786}
+  - component: {fileID: 114393410793138506}
+  - component: {fileID: 114195978473918562}
   m_Layer: 0
   m_Name: Network_Manager
   m_TagString: Untagged
@@ -43,7 +42,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114522006421254786
+--- !u!114 &114195978473918562
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,9 +61,9 @@ MonoBehaviour:
   m_UseNetworkManager: 1
   m_BroadcastData: HELLO
   m_ShowGUI: 1
-  m_OffsetX: 130
-  m_OffsetY: 130
---- !u!114 &114524651327879598
+  m_OffsetX: 20
+  m_OffsetY: 170
+--- !u!114 &114393410793138506
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,19 +71,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1705563946243664}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1553936188, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BroadcastPort: 47777
-  m_BroadcastKey: 2222
-  m_BroadcastVersion: 1
-  m_BroadcastSubVersion: 1
-  m_BroadcastInterval: 1000
-  m_UseNetworkManager: 1
-  m_BroadcastData: HELLO
-  m_ShowGUI: 1
-  m_OffsetX: 0
-  m_OffsetY: 130
+  manager: {fileID: 0}
+  showGUI: 1
+  offsetX: 20
+  offsetY: 50
 --- !u!114 &114669431414565348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,8 +93,8 @@ MonoBehaviour:
   m_ServerBindToIP: 0
   m_ServerBindAddress: 
   m_NetworkAddress: localhost
-  m_DontDestroyOnLoad: 1
-  m_RunInBackground: 1
+  m_DontDestroyOnLoad: 0
+  m_RunInBackground: 0
   m_ScriptCRCCheck: 1
   m_MaxDelay: 0.01
   m_LogLevel: 2
@@ -110,16 +103,13 @@ MonoBehaviour:
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 1
   m_OfflineScene: Scene_Menu
-  m_OnlineScene: Scene_ARMP
+  m_OnlineScene: Scene_TestMP
   m_SpawnPrefabs:
   - {fileID: 1217970624437344, guid: bf96073135f746c418c01f2c13c3b8df, type: 2}
-  - {fileID: 1244425193004388, guid: 6ed21f04b69767b4d849ba07b6a9333d, type: 2}
-  - {fileID: 1337628962850732, guid: cfcefe0242b30bd4395c8a9c7f8e93fc, type: 2}
+  - {fileID: 1093270883544772, guid: 5622ac11817eb8b44b2fc9f5efbd205d, type: 2}
   - {fileID: 1137027581654020, guid: 2247ca03fe30f1e4f9cecc90252c69c3, type: 2}
   - {fileID: 1517200034731622, guid: bf8dabcbe90bbb84db486587330f5de1, type: 2}
   - {fileID: 1256495392692542, guid: 980361b35e3f6524f926370e1b851d16, type: 2}
-  - {fileID: 1707797863292162, guid: 325eaa2dcea2cb74da482b1866befdf9, type: 2}
-  - {fileID: 1093270883544772, guid: 5622ac11817eb8b44b2fc9f5efbd205d, type: 2}
   m_CustomConfig: 0
   m_MaxConnections: 4
   m_ConnectionConfig:
@@ -175,18 +165,3 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
---- !u!114 &114676406405645254
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1705563946243664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 227461547, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0

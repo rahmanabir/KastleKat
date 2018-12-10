@@ -94,13 +94,13 @@ public class gameScoreTalier : MonoBehaviour {
             healthSlider.transform.GetChild(5).gameObject.SetActive(true);
             healthSlider.transform.GetChild(6).gameObject.SetActive(false);
         }
-        else if (castleHealthPercent <= 25 && castleHealthPercent > 5) {
+        else if (castleHealthPercent <= 25 && castleHealthPercent > 10) {
             healthSlider.transform.GetChild(3).gameObject.SetActive(false);
             healthSlider.transform.GetChild(4).gameObject.SetActive(false);
             healthSlider.transform.GetChild(5).gameObject.SetActive(false);
             healthSlider.transform.GetChild(6).gameObject.SetActive(true);
         }
-        else if (castleHealthPercent <=5 && castleHealthPercent >= 0) GameOver();
+        else if (castleHealthPercent <=10 && castleHealthPercent >= 0) GameOver();
 
 	}
 

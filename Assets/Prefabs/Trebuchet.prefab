@@ -281,6 +281,8 @@ MonoBehaviour:
   debugPath: 1
   isShooting: 0
   cataAnim: {fileID: 95723788408272472}
+  touchParticles: {fileID: 1974966822411910, guid: 7eeb1c8ae7887264c859c938a121a084,
+    type: 2}
 --- !u!137 &137874686003994564
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

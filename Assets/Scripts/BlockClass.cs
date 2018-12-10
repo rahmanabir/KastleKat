@@ -10,7 +10,7 @@ public class BlockClass : MonoBehaviour {
     protected static GameObject scoreTalier;
 
 	protected float stoneHealth;
-	protected float displacementThreshold;
+	public float displacementThreshold;
 	protected Vector3 originalPos;
 	protected Vector3 curPos;
 	protected Vector3 displacementVector;

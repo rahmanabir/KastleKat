@@ -184,5 +184,6 @@ MonoBehaviour:
   breakParticles: {fileID: 1857912228080718, guid: 35eb9b06ac4c9174a9b574205bb8a7d1,
     type: 2}
   stoneHealth: 0
+  displacementThreshold: 9
   mass: 10
   maxHealth: 100

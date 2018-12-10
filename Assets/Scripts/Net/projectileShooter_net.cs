@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using System.Net;
+using System.Net.Sockets;
 
 public class projectileShooter_net : NetworkBehaviour {
 
@@ -9,28 +12,48 @@ public class projectileShooter_net : NetworkBehaviour {
     public int speed_multiplier = 30;
     bool isShooting = false;
 
-    void Start () {
-		
-        // if(!isLocalPlayer){
-        //     Destroy(this);
-        //     return;
-        // }
+    //public Button shootButt;
+    public TextMesh playerName;
+    public string localIPAddress;
 
-	}
+    void Start () {
+
+        if (!isLocalPlayer) {
+            return;
+        }
+        //shootButt = GameObject.Find("CanvasAR_SP").transform.GetChild(1).GetComponent<Button>();
+        //print(shootButt.name);
+        //shootButt.onClick.AddListener(CallCmdShootProj);
+        var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+        foreach (var ip in host.AddressList) {
+            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork) {
+                localIPAddress = ip.ToString();
+                print(localIPAddress);
+                GameObject.Find("CanvasAR_SP").transform.GetChild(2).GetComponent<Text>().text = localIPAddress;
+            }            
+        }
+
+        playerName = gameObject.transform.GetChild(0).GetComponent<TextMesh>();
+        playerName.text = SystemInfo.deviceName;
+
+    }
 
 	
 	// Update is called once per frame
 	void Update () {
 
-
         if(!isLocalPlayer){
+            print("Not Local Player");
             return;
         }
 
+        print("Local Player");
+
         if (Input.GetButtonDown("Fire2")) CmdShootProj();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SceneManager.LoadScene("Scene_Menu");
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            GameObject.Find("CanvasAR_SP").GetComponent<SceneMan>().LoadMenu();
+        }
 
         if (Input.GetKeyDown(KeyCode.F)){
 		    Vector3 curPos = transform.position;
@@ -44,6 +67,10 @@ public class projectileShooter_net : NetworkBehaviour {
 
     void NotShooting() {
         isShooting = false;
+    }
+
+    void CallCmdShootProj() {
+        CmdShootProj();
     }
 
     [Command]

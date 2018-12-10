@@ -3,19 +3,38 @@ using UnityEngine.SceneManagement;
 
 public class SceneMan : MonoBehaviour {
 
-	public void LoadCastle() {
-        SceneManager.LoadScene("Scene_AR");
+    public GameObject closerMenu;
+
+    public void LoadCastle() {
+        Invoke("InvokeLoadCastle", 1.1f);
+        closerMenu.SetActive(true);
     }
     public void LoadNoBox() {
-        SceneManager.LoadScene("Scene_ARnoBox");
+        Invoke("InvokeLoadCastle", 1.1f);
+        closerMenu.SetActive(true);
     }
     public void LoadMulti() {
-        SceneManager.LoadScene("Scene_ARMP");
+        Invoke("InvokeLoadMulti", 1.1f);
+        closerMenu.SetActive(true);
     }
     public void Quit() {
         Application.Quit();
     }
     public void LoadMenu() {
+        Invoke("InvokeLoadMenu", 1.1f);
+        closerMenu.SetActive(true);
+    }
+
+    public void InvokeLoadCastle() {
+        SceneManager.LoadScene("Scene_AR");
+    }
+    public void InvokeLoadNoBox() {
+        SceneManager.LoadScene("Scene_ARnoBox");
+    }
+    public void InvokeLoadMulti() {
+        SceneManager.LoadScene("Scene_TestMP");
+    }
+    public void InvokeLoadMenu() {
         SceneManager.LoadScene("Scene_Menu");
     }
 }

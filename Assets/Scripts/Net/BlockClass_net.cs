@@ -14,7 +14,7 @@ public class BlockClass_net : NetworkBehaviour {
 	public float stoneHealth;
 	protected float prevHealth;
 	
-	protected float displacementThreshold;
+	public float displacementThreshold;
 	protected Vector3 originalPos;
 	protected Vector3 curPos;
 	protected Vector3 displacementVector;

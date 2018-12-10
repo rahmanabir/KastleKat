@@ -12,20 +12,19 @@ public class RockLauncher : MonoBehaviour {
     //private Transform target;
     private Vector3 target;
     //protected Transform raycast_target;
-
     public float sliderMultiplier = 1.0f;
-
 
     public float h = 25;    //Max height to be reached by the rock 
     public float gravity = -18; //Gravity value
 
     public bool debugPath, isShooting=false;
     public Animator cataAnim;
+    public GameObject touchParticles;
 
 
     private void Start()
     {
-        rock.useGravity = false;
+        //rock.useGravity = false;
         target = transform.position;
         cataAnim.SetBool("cataReady", true);
     }
@@ -52,8 +51,11 @@ public class RockLauncher : MonoBehaviour {
                 RaycastHit hitInfo;
                 if (Physics.Raycast(ray, out hitInfo)) {
                         var rig = hitInfo.collider.GetComponent<Rigidbody>();
-                        if (rig != null) target = hitInfo.point;
-                        
+                    if (rig != null) {
+                        target = hitInfo.point;
+                        Instantiate(touchParticles, target, Quaternion.identity);
+                    }
+
                 }
             }
             if (!isShooting) {
@@ -70,8 +72,10 @@ public class RockLauncher : MonoBehaviour {
             RaycastHit hitInfo;
             if (Physics.Raycast(ray, out hitInfo)) {
                 var rig = hitInfo.collider.GetComponent<Rigidbody>();
-                if (rig != null) target = hitInfo.point;
-
+                if (rig != null) {
+                    target = hitInfo.point;
+                    Instantiate(touchParticles, target, Quaternion.identity);
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.Space)) {
@@ -92,7 +96,7 @@ public class RockLauncher : MonoBehaviour {
         Rigidbody rocky = Instantiate(rock, transform.position, transform.rotation);
 
         rocky.useGravity = true; 
-        rocky.velocity = CalculateLaunchData(rocky).initailVelocity*sliderMultiplier;
+        rocky.velocity = CalculateLaunchData(rocky).initialVelocity*sliderMultiplier;
       
         print(rocky.velocity);
     }
@@ -134,12 +138,12 @@ public class RockLauncher : MonoBehaviour {
 
     struct LaunchData {
 
-        public readonly Vector3 initailVelocity;
+        public readonly Vector3 initialVelocity;
         public readonly float timeToTarget; 
 
         public LaunchData (Vector3 initialVelocity, float timeToTarget){
 
-            this.initailVelocity = initialVelocity;
+            this.initialVelocity = initialVelocity;
             this.timeToTarget = timeToTarget;
 
         }

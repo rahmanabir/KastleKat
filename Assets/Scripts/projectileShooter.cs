@@ -13,15 +13,16 @@ public class projectileShooter : MonoBehaviour {
 
         if (Input.GetButtonDown("Fire2")) ShootProj();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-            SceneManager.LoadScene("Scene_Menu");
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            GetComponent<SceneMan>().LoadMenu();
+        }
 
         if (Input.GetKeyDown(KeyCode.F)){
 		    Vector3 curPos = transform.position;
 		    Vector3 normPos = curPos.normalized;
 		    Vector3 newPos = curPos+normPos*-5;
 
-		    Rigidbody cblock = Instantiate(castleBlock, newPos, transform.rotation);
+		    //Rigidbody cblock = Instantiate(castleBlock, newPos, transform.rotation);
 	    }
         
 	}
